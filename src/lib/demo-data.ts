@@ -28,7 +28,7 @@ export const CLIENTS: Client[] = Array.from({ length: 35 }, (_, i) => {
     id: i + 1,
     name,
     email: name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(" ", ".") + "@exemplo.pt",
-    plan: plans[i % 5 === 0 ? 2 : i % 2 === 0 ? 1 : 0],
+    plan: plans[i % 5 === 0 ? 2 : i % 2 === 0 ? 1 : 0]!,
     joined: d.toLocaleDateString("pt-PT"),
     status: i % 5 === 4 ? "Inativo" : "Ativo",
   };
@@ -43,7 +43,7 @@ export const REQUESTS = Array.from({ length: 7 }, (_, i) => {
     name,
     email: name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(" ", ".") + "@exemplo.pt",
     phone: `91${(2345670 + i * 1111).toString()}`,
-    plan: plans[i % 3],
+    plan: plans[i % 3]!,
     date: new Date(2026, 10, 1 + i).toLocaleDateString("pt-PT"),
     status: "Novo pedido" as RequestStatus,
   };

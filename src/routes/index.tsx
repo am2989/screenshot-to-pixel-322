@@ -129,7 +129,7 @@ function Index() {
 
       <Section id="explicadores" title="Os nossos explicadores" sub="Perfis fictícios, apresentados apenas como exemplos demonstrativos." tinted>
         <div className="grid gap-6 md:grid-cols-3">
-          {TUTORS.map((t, i) => <TutorCard key={t.name} t={t} color={["bg-salmon", "bg-petrol", "bg-mint"][i]} />)}
+          {TUTORS.map((t, i) => <TutorCard key={t.name} t={t} color={["bg-salmon", "bg-petrol", "bg-mint"][i] ?? ""} />)}
         </div>
       </Section>
 
@@ -236,10 +236,10 @@ function SignupForm({ plan, setPlan }: { plan: PlanId; setPlan: (p: PlanId) => v
     const f = new FormData(e.currentTarget);
     const err: Record<string, string> = {};
     for (const k of ["guardian", "student", "year"]) if (!String(f.get(k) ?? "").trim()) err[k] = "Campo obrigatório";
-    if (!/^\S+@\S+\.\S+$/.test(String(f.get("email")))) err.email = "Email inválido";
-    if (!/^(\+351)?\s?9\d{8}$/.test(String(f.get("phone")).replace(/\s/g, ""))) err.phone = "Telefone inválido (ex.: 912345678)";
-    if (f.getAll("subjects").length === 0) err.subjects = "Escolhe pelo menos uma disciplina";
-    if (!f.get("consent")) err.consent = "É necessário aceitar a política de privacidade";
+    if (!/^\S+@\S+\.\S+$/.test(String(f.get("email")))) err["email"] = "Email inválido";
+    if (!/^(\+351)?\s?9\d{8}$/.test(String(f.get("phone")).replace(/\s/g, ""))) err["phone"] = "Telefone inválido (ex.: 912345678)";
+    if (f.getAll("subjects").length === 0) err["subjects"] = "Escolhe pelo menos uma disciplina";
+    if (!f.get("consent")) err["consent"] = "É necessário aceitar a política de privacidade";
     setErrors(err);
     if (Object.keys(err).length === 0) setDone(true);
   }
