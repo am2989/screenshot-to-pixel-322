@@ -26,7 +26,7 @@ function Logo() {
   return (
     <span className="flex items-center gap-2 font-display text-2xl font-bold text-petrol">
       <span className="grid h-9 w-9 place-items-center rounded-xl bg-salmon text-primary-foreground"><GraduationCap size={20} /></span>
-      Explica<span className="text-salmon">+</span>
+      <span>Explica<span className="text-salmon">+</span></span>
     </span>
   );
 }

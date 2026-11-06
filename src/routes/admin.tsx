@@ -33,7 +33,7 @@ function Admin() {
     <div className="flex min-h-screen flex-col md:flex-row">
       <aside className="bg-petrol p-5 text-primary-foreground md:sticky md:top-0 md:h-screen md:w-64 md:shrink-0">
         <span className="flex items-center gap-2 font-display text-2xl font-bold">
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-salmon"><GraduationCap size={20} /></span>Explica<span className="text-salmon">+</span>
+          <span className="grid h-9 w-9 place-items-center rounded-xl bg-salmon"><GraduationCap size={20} /></span><span>Explica<span className="text-salmon">+</span></span>
         </span>
         <p className="mt-1 text-xs opacity-70">Administração · demo</p>
         <nav className="mt-6 flex gap-1 overflow-x-auto md:flex-col">
