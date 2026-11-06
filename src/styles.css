@@ -51,6 +51,14 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+  --color-salmon: var(--salmon);
+  --color-blush: var(--blush);
+  --color-sun: var(--sun);
+  --color-mint: var(--mint);
+  --color-petrol: var(--petrol);
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Nunito", system-ui, sans-serif;
+  --shadow-soft: 0 10px 30px -12px color-mix(in oklab, var(--petrol) 25%, transparent);
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -62,26 +70,31 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --radius: 1rem;
+  --salmon: #F28B82;
+  --blush: #F8D7DA;
+  --sun: #FFE69A;
+  --mint: #A8E6CF;
+  --petrol: #315C63;
+  --background: #FFF9F5;
+  --foreground: #23383c;
+  --card: #FFFFFF;
+  --card-foreground: #23383c;
+  --popover: #FFFFFF;
+  --popover-foreground: #23383c;
+  --primary: #315C63;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F8D7DA;
+  --secondary-foreground: #315C63;
+  --muted: #f6ece6;
+  --muted-foreground: #5f7376;
+  --accent: #F28B82;
+  --accent-foreground: #FFFFFF;
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --destructive-foreground: #FFFFFF;
+  --border: #f0e2da;
+  --input: #ead8ce;
+  --ring: #315C63;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -141,4 +154,10 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
   }
+}
+
+@layer base {
+  body { font-family: var(--font-sans); }
+  h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
+  html { scroll-behavior: smooth; }
 }
